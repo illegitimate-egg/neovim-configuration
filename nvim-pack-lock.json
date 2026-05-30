@@ -103,6 +103,10 @@
       "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
       "src": "https://github.com/folke/todo-comments.nvim"
     },
+    "todoage.nvim": {
+      "rev": "666e000ef0da94d0ea4f9d00101f7177ea16d4da",
+      "src": "https://github.com/harukikuri/todoage.nvim"
+    },
     "tokyonight.nvim": {
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
       "src": "https://github.com/folke/tokyonight.nvim"
