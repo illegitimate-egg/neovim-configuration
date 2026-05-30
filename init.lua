@@ -171,7 +171,19 @@ vim.pack.add { 'https://codeberg.org/ficd/ashen.nvim' }
 ---@diagnostic disable-next-line: missing-fields
 require('ashen').setup {}
 
-vim.cmd.colorscheme 'ashen'
+vim.pack.add { gh 'szymonwilczek/arete.nvim' }
+require('arete').setup {
+  cache = true,
+  styles = {
+    comments = { italic = true },
+    keywords = { bold = false },
+    types = { bold = false },
+    functions = {},
+    variables = {},
+  },
+}
+
+vim.cmd.colorscheme 'ef-autumn'
 
 vim.pack.add { gh 'folke/todo-comments.nvim' }
 require('todo-comments').setup { signs = false }
@@ -211,6 +223,7 @@ local telescope_plugins = {
   gh 'nvim-lua/plenary.nvim',
   gh 'nvim-telescope/telescope.nvim',
   gh 'nvim-telescope/telescope-ui-select.nvim',
+  gh 'andrewberty/telescope-themes',
 }
 if vim.fn.executable 'make' == 1 then table.insert(telescope_plugins, gh 'nvim-telescope/telescope-fzf-native.nvim') end
 
@@ -234,6 +247,7 @@ require('telescope').setup {
 -- Enable Telescope extensions if they are installed
 pcall(require('telescope').load_extension, 'fzf')
 pcall(require('telescope').load_extension, 'ui-select')
+pcall(require('telescope').load_extension, 'themes')
 
 local builtin = require 'telescope.builtin'
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
