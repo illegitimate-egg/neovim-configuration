@@ -14,6 +14,10 @@ vim.o.mouse = 'a'
 
 vim.o.showmode = false
 
+vim.o.relativenumber = true
+vim.api.nvim_create_autocmd("InsertEnter", { command = [[set norelativenumber]] })
+vim.api.nvim_create_autocmd("InsertLeave", { command = [[set relativenumber]] })
+
 vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 vim.o.breakindent = true
